@@ -9,7 +9,7 @@ class TruckLockDialog extends StatefulWidget {
   final List gpsData;
   final List gpsDataHistory;
   final List gpsStoppageHistory;
-  final List routeHistory;
+ // final List routeHistory;
   final String? TruckNo;
   final int? deviceId;
   final String? driverNum;
@@ -21,7 +21,7 @@ class TruckLockDialog extends StatefulWidget {
       {required this.gpsData,
       required this.gpsDataHistory,
       required this.gpsStoppageHistory,
-      required this.routeHistory,
+    //  required this.routeHistory,
       // required this.position,
       this.TruckNo,
       this.driverName,
@@ -37,7 +37,7 @@ class TruckLockDialog extends StatefulWidget {
 class _TruckLockDialogState extends State<TruckLockDialog> {
   final lockStorage = GetStorage();
   var lockState;
-
+  var routeHistory;
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -65,14 +65,14 @@ class _TruckLockDialogState extends State<TruckLockDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Text("Kya aap pakka truck ko ${widget.value} karna chahte hai?",
+                Text("Kya aap pakka truck ko ${widget.value} karna chahte hai?".tr,
                     style: TextStyle(fontSize: 20, fontWeight: boldWeight),
                     textAlign: TextAlign.center),
                 SizedBox(
                   height: 15,
                 ),
                 Text(
-                  "Aapke lock karne tak truck unlock hi rahega",
+                  "Aapke lock karne tak truck unlock hi rahega".tr,
                   style: TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
@@ -92,7 +92,7 @@ class _TruckLockDialogState extends State<TruckLockDialog> {
                                       borderRadius: BorderRadius.circular(18.0),
                                       side: BorderSide(color: darkBlueColor)))),
                           child: Text(
-                            "${widget.value}",
+                            "${widget.value}".tr,
                             // AppLocalizations.of(context)!.next,
                             style: TextStyle(
                               color: white,
@@ -104,7 +104,7 @@ class _TruckLockDialogState extends State<TruckLockDialog> {
                                       widget.gpsData,
                                       widget.gpsDataHistory,
                                       widget.gpsStoppageHistory,
-                                      widget.routeHistory,
+                                      routeHistory,
                                       widget.driverNum,
                                       widget.TruckNo,
                                       widget.driverName,
@@ -126,7 +126,7 @@ class _TruckLockDialogState extends State<TruckLockDialog> {
                                       widget.gpsData,
                                       widget.gpsDataHistory,
                                       widget.gpsStoppageHistory,
-                                      widget.routeHistory,
+                                      routeHistory,
                                       widget.driverNum,
                                       widget.TruckNo,
                                       widget.driverName,
